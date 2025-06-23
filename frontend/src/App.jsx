@@ -4,7 +4,7 @@ import axios from 'axios';
 import BlogList from './components/BlogList';
 import CreateBlog from './components/CreateBlog';
 import BlogDetail from './components/BlogDetail';
-import styles from './App.module.css';
+import './App.css'; 
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -24,18 +24,18 @@ function App() {
 
   return (
     <Router>
-      <div className={styles.app}>
-        <header className={styles.header}>
-          <Link to="/" className={styles.logoLink}>
+      <div className='app'>
+        <header className='header'>
+          <Link to="/" className='logoLink'>
             <h1>MERN Blog</h1>
           </Link>
           <nav>
-            <Link to="/" className={styles.navLink}>Home</Link>
-            <Link to="/create" className={styles.navLink}>New Post</Link>
+            <Link to="/" className='navLink'>Home</Link>
+            <Link to="/create" className='navLink'>New Post</Link>
           </nav>
         </header>
         
-        <main className={styles.mainContent}>
+        <main className='mainContent'>
           <Routes>
             <Route path="/" element={<BlogList blogs={blogs} fetchBlogs={fetchBlogs} />} />
             <Route path="/create" element={<CreateBlog fetchBlogs={fetchBlogs} />} />
@@ -43,7 +43,7 @@ function App() {
           </Routes>
         </main>
         
-        <footer className={styles.footer}>
+        <footer className='footer'>
           <p>© {new Date().getFullYear()} MERN Blog. All rights reserved.</p>
         </footer>
       </div>
